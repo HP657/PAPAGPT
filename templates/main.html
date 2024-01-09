@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PAPAGPT</title>
+    </head>
+    <body>
+        <h1>PAPAGPT</h1>
+        {% if ID %}
+
+        <p>{{ID}} 로그인 중</p>
+
+        <p><a href="/logout">로그아웃</a></p>
+        <p><a href="/quit">탈퇴</a></p>
+
+        <form method="post">
+            <label for="user_input">Question:</label><br>
+            <input type="text" id="user_input" name="user_input" value="{{ user_input }}"><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% if chatlog %}
+            {% for logs in chatlog %}
+            <p>{{logs[2]}}</p>
+            <p>{{logs[3]}}</p>
+            {% endfor %}
+        {% endif %}
+
+    
+        {% else %}
+        <h1><a href="/join">회원가입 하러가기</a></h1>
+        <h1><a href="/login">로그인 하러가기</a></h1>
+        {% endif %}
+    </body>
+</html>

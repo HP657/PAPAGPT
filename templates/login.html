@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>로그인</title>
+</head>
+<body>
+    <form action="/login" method="POST">
+        <input type="text" name="userID" placeholder="아이디"><br>
+        <input type="password" name="password" placeholder="비밀번호"><br>
+        {% if message %}
+            <p>{{message}}</p>
+        {% endif %}
+        <button type="submit">로그인하기</button>
+    </form>
+    <a href="/">메인 화면</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입</title>
+</head>
+<body>
+    <a href="/">메인 화면</a>
+    {% if not clear %}
+    <form action="/join" method="POST">
+        <input type="text" name="userID" required placeholder="아이디"><br>
+        <input type="password" name="PW1" required placeholder="비밀번호"><br>
+        <input type="password" name="PW2" required placeholder="비밀번호 확인"><br>
+        <button type="submit">회원가입하기</button>
+    </form>
+    {% endif %}
+    {% if message %}
+        <p>{{message}}</p>
+    {% endif %}
+</body>
+</html>
